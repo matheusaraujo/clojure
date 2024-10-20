@@ -1,0 +1,17 @@
+{
+  "name": "Clojure Development",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".."
+  },
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.shell.linux": "/bin/bash"
+      },
+      "extensions": ["avli.clojure"]
+    }
+  },
+  "postCreateCommand": "clojure --version",
+  "remoteUser": "root"
+}

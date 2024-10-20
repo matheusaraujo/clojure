@@ -1,0 +1,26 @@
+name: Clojure CI
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: "temurin"
+          java-version: "17"
+
+      - name: Install Clojure
+        run: sudo apt-get install -y clojure
+
+      - name: Run Clojure script
+        run: clojure hello-world.clj
